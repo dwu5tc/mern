@@ -1,0 +1,3 @@
+compare: auth flow vs wes bos
+compare: error handling vs wes bos
+try: argon2 instead of bcrypt
