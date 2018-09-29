@@ -6,6 +6,9 @@ const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const passport = require('passport');
 
+// load input validation
+const validateRegisterInput = require('../../validation/register');
+
 // load user model
 const User = require('../../models/User');
 
@@ -18,10 +21,18 @@ router.get('/test', (req, res) => res.json({ msg: 'users works' })); // refers t
 // @desc	register user
 // @access 	public
 router.post('/register', (req, res) => {
+	const { errors, isValid } = validateRegisterInput(req.body);
+
+	// check validation
+	if (!isValid) {
+		return res.status(400).json(errors);
+	}
+
 	User.findOne({ email: req.body.email })
 		.then(user => {
 			if (user) {
-				return res.status(400).json({ email: 'Email already exists' });
+				errors.email = 'Email already exists';
+				return res.status(400).json(errors);
 			}
 
 			const avatar = gravatar.url(req.body.email, {
@@ -41,8 +52,7 @@ router.post('/register', (req, res) => {
 				bcrypt.hash(newUser.password, salt, (err, hash) => {
 					if (err) throw err;
 					newUser.password = hash;
-					newUser
-						.save()
+					newUser.save()
 						.then(user => res.json(user))
 						.catch(err => console.log(err));
 				})
@@ -87,7 +97,7 @@ router.post('/login', (req, res) => {
 				return res.status(400).json({ password: 'Password incorrect!' });
 			}
 			});
-		});
+		}); // catch error???
 });
 
 // @route 	GET api/users/current
@@ -101,6 +111,7 @@ router.get('/current',
 			name: req.user.name,
 			email: req.user.email
 		});
+		// what about errors???
 	});
 // if someone tries to access this route without setting header with a valid authorization token, they will get unauthorized
 
