@@ -1,5 +1,7 @@
+check: naming conventions for mongoose models
 question: how does the jwt_payload have the user id???
 compare: auth flow vs wes bos
 compare: error handling vs wes bos
+missing: sanitization of inputs... not trimming whitespace
 try: argon2 instead of bcrypt
 question: shouldn't salt be stored and checked?
