@@ -216,14 +216,21 @@ router.post('/education',
 router.delete('/experience/:exp_id',
 	passport.authenticate('jwt', { session: false }),
 	(req, res) => {
-		Profile.findOne({ user: req.user.id }).then(profile => {
-			const removeIndex = profile.experience.map(item => item.id)
-				.indexOf(req.params.exp_id);
+		// Profile.findOne({ user: req.user.id }).then(profile => {
+		// 	const removeIndex = profile.experience.map(item => item.id)
+		// 		.indexOf(req.params.exp_id);
+		// 	if (removeIndex > -1) {
+		// 		profile.experience.splice(removeIndex, 1);
 
-			profile.experience.splice(removeIndex, 1);
+		// 		profile.save().then(profile => res.json(profile));
+		// 	}
+		// })
 
-			profile.save().then(profile => res.json(profile));
-		})
+		// CLEANER METHOD!!!??? 
+		// Profile.findOne({ user: req.user.id }).the(profile => {
+		// 	profile.experience.remove({ _id: req.params.exp_id });
+		// 	profile.save().then(profile => res.status(200).json(profile)); // is this 200 necessary???
+		// })
 		.catch(err => res.status(404).json(err));
 	});
 

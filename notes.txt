@@ -1,5 +1,8 @@
+***some of the ways things are being done aren't the most optimal... smfh
+***go through code from lectures <23 to look for potential optimizations
 check: naming conventions for mongoose models
 question: how does the jwt_payload have the user id???
+review: l23 deletion of educations/experiences: the cleaner method and how .remove works
 compare: auth flow vs wes bos
 compare: error handling vs wes bos
 missing: sanitization of inputs... not trimming whitespace
