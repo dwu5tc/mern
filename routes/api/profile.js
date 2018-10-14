@@ -41,7 +41,7 @@ router.get('/all', (req, res) => {
 		.populate('user', ['name', 'avatar'])
 		.then(profiles => {
 			if (!profiles) { // shouldn't we check profiles.length???
-				errors.profiles = 'There are no profiles!';
+				errors.profiles = 'There are no profiles!'; // maybe this should be profile!!!
 				return res.status(404).json(errors);
 			}
 			res.json(profiles);
@@ -227,10 +227,10 @@ router.delete('/experience/:exp_id',
 		// })
 
 		// CLEANER METHOD!!!??? 
-		// Profile.findOne({ user: req.user.id }).the(profile => {
-		// 	profile.experience.remove({ _id: req.params.exp_id });
-		// 	profile.save().then(profile => res.status(200).json(profile)); // is this 200 necessary???
-		// })
+		Profile.findOne({ user: req.user.id }).the(profile => {
+			profile.experience.remove({ _id: req.params.exp_id });
+			profile.save().then(profile => res.status(200).json(profile)); // is this 200 necessary???
+		})
 		.catch(err => res.status(404).json(err));
 	});
 

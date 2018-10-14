@@ -1,10 +1,14 @@
 ***some of the ways things are being done aren't the most optimal... smfh
 ***go through code from lectures <23 to look for potential optimizations
 check: naming conventions for mongoose models
+check: liking/disliking things... one route or two???
+review: status codes... 400 vs 404... etc
 question: how does the jwt_payload have the user id???
 review: l23 deletion of educations/experiences: the cleaner method and how .remove works
 compare: auth flow vs wes bos
 compare: error handling vs wes bos
 missing: sanitization of inputs... not trimming whitespace
 try: argon2 instead of bcrypt
+check: if instead of just :id in routes, should do :post_id (more specific)
+question: how to properly structure a deletion route for a post comment i.e order of keywords and params
 question: shouldn't salt be stored and checked?
