@@ -16,15 +16,7 @@ class Register extends Component {
 			passwordConfirm: '',
 			errors: {}
 		}
-
-		// this.onChange = this.onChange.bind(this);
 	}
-
-	// onChange(e) {
-	// 	this.setState({
-	// 		[e.target.name]: e.target.value
-	// 	});
-	// }
 
 	onChange = e => this.setState({
 		[e.target.name]: e.target.value
@@ -39,12 +31,8 @@ class Register extends Component {
 			password: this.state.password,
 			passwordConfirm: this.state.passwordConfirm
 		};
-		console.log(newUser);
-
+		
 		this.props.registerUser(newUser, this.props.history);
-		// axios.post('/api/users/register', newUser)
-		// 	.then(res => console.log(res.data))
-		// 	.catch(err => this.setState({ errors: err.response.data }));
 	}
 
 	componentWillReceiveProps(nextProps) {
