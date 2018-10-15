@@ -12,3 +12,4 @@ try: argon2 instead of bcrypt
 check: if instead of just :id in routes, should do :post_id (more specific)
 question: how to properly structure a deletion route for a post comment i.e order of keywords and params
 question: shouldn't salt be stored and checked?
+note: don't need to separate out error handling into a separate reducer
