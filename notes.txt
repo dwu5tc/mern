@@ -12,4 +12,11 @@ try: argon2 instead of bcrypt
 check: if instead of just :id in routes, should do :post_id (more specific)
 question: how to properly structure a deletion route for a post comment i.e order of keywords and params
 question: shouldn't salt be stored and checked?
-note: don't need to separate out error handling into a separate reducer
+note: don't need to separate out error handling into a separate reducer???i
+check: how withrouter and history works...
+try: saving tokens to cookies instead of local storage
+note: apparently redux now manages error state...???
+look into: memoize-one
+read (maybe): https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html
+***this guys code seems much cleaner...
+***https://github.com/EugeneYY/DevInn*** 
