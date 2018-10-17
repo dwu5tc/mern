@@ -31,7 +31,7 @@ class Register extends Component {
 			password: this.state.password,
 			passwordConfirm: this.state.passwordConfirm
 		};
-		
+
 		this.props.registerUser(newUser, this.props.history);
 	}
 
@@ -60,7 +60,7 @@ class Register extends Component {
 										placeholder="Name" 
 										name="name" 
 										value={ this.state.name }
-										onChange={ this.onChange } />{ errors.name && (<div className='invalid-feedback'>{ errors.name }</div>)}
+										onChange={ this.onChange } />{ errors.name && (<div className='invalid-feedback'>{ errors.name }</div>) }
 								</div>
 								<div className="form-group">
 									<input type="email" 
@@ -70,7 +70,7 @@ class Register extends Component {
 										placeholder="Email Address" 
 										value={ this.state.email }
 										onChange={ this.onChange }
-										name="email" />{ errors.email && (<div className='invalid-feedback'>{ errors.email }</div>)}
+										name="email" />{ errors.email && (<div className='invalid-feedback'>{ errors.email }</div>) }
 									<small className="form-text text-muted">This site uses Gravatar so if you want a profile image, use a Gravatar email</small>
 								</div>	
 								<div className="form-group">
@@ -81,7 +81,7 @@ class Register extends Component {
 										placeholder="Password" 
 										name="password" 
 										value={ this.state.password }
-										onChange={ this.onChange } />{ errors.password && (<div className='invalid-feedback'>{ errors.password }</div>)}
+										onChange={ this.onChange } />{ errors.password && (<div className='invalid-feedback'>{ errors.password }</div>) }
 								</div>
 								 <div className="form-group">
 									<input type="password" 
@@ -91,7 +91,7 @@ class Register extends Component {
 										placeholder="Confirm Password" 
 										name="passwordConfirm" 
 										value={ this.state.passwordConfirm }
-										onChange={ this.onChange } />{ errors.passwordConfirm && (<div className='invalid-feedback'>{ errors.passwordConfirm }</div>)}
+										onChange={ this.onChange } />{ errors.passwordConfirm && (<div className='invalid-feedback'>{ errors.passwordConfirm }</div>) }
 								</div>
 								<input type="submit" className="btn btn-info btn-block mt-4" />
 							</form>
