@@ -23,13 +23,18 @@ class Login extends Component {
 
 	onSubmit = e => {
 		e.preventDefault();
-
 		const userData = { 
 			email: this.state.email,
 			password: this.state.password,
 		};
 		
 		this.props.loginUser(userData);
+	}
+
+	componentDidMount() {
+		if (this.props.auth.isAuthenticated) {
+			this.props.history.push('/dashboard');
+		}
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -87,9 +92,9 @@ Login.propTypes = {
 	loginUser: PropTypes.func.isRequired,
 	auth: PropTypes.object.isRequired,
 	errors: PropTypes.object.isRequired
-}
+};
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
 	auth: state.auth,
 	errors: state.errors
 });
