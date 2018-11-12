@@ -18,6 +18,7 @@ try: saving tokens to cookies instead of local storage
 note: apparently redux now manages error state...???
 check: how dispatch works (store.dispatch in root app vs dispatch in actions)
 check: double vs single curly braces
+look into: switch and withrouter
 look into: memoize-one
 read (maybe): https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html
 ***this guys code seems much cleaner...
